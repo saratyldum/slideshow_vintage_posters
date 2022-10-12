@@ -2,6 +2,8 @@ ul {
 	display: flex;
 	list-style: none;
 	gap: 1em;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 figcaption {
