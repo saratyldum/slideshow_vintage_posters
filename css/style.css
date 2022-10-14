@@ -1,14 +1,16 @@
-ul {
-	display: grid;
-	list-style: none;
-	gap: 1em;
-	align-items: center;
-	flex-wrap: wrap;
+.slideshow__container {
+	width: 100%;
 }
 
-figcaption {
-	display: none;
+ul {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	list-style: none;
+	gap: 5rem;
+	width: 400%;
+	align-items: baseline;
 }
+
 
 .nav {
 	width: 60%;
