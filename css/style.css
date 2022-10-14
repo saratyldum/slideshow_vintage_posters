@@ -1,5 +1,5 @@
 ul {
-	display: flex;
+	display: grid;
 	list-style: none;
 	gap: 1em;
 	align-items: center;
@@ -16,7 +16,8 @@ figcaption {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	margin: auto;
+	margin: 2rem auto;
+	border-radius: 2rem;
 }
 
 
