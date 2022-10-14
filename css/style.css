@@ -1,16 +1,20 @@
 .slideshow__container {
-	width: 100%;
+	width: 100vw;
+	/* overflow: hidden; */
 }
 
 ul {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	list-style: none;
-	gap: 5rem;
-	width: 400%;
+	gap: 6rem;
+	width: 450%;
 	align-items: baseline;
 }
 
+img {
+	object-fit: cover;
+}
 
 .nav {
 	width: 60%;
@@ -33,4 +37,15 @@ ul {
 
 .nav__button--active {
 	background-color: orange;
+}
+
+figcaption {
+	padding: 1.5rem 0 0 0;
+	border-bottom: 1px solid black;
+}
+
+.navigating__button {
+	width: 1rem;
+	height: 1rem;
+	background-color: black;
 }
