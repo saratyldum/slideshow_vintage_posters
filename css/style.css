@@ -1,6 +1,6 @@
 .slideshow__container {
 	width: 100vw;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 
 ul {
@@ -8,12 +8,13 @@ ul {
 	grid-template-columns: repeat(12, 1fr);
 	list-style: none;
 	gap: 6rem;
-	width: 450%;
+	width: 375%;
 	align-items: baseline;
 }
 
 img {
 	object-fit: cover;
+	width: 100%;
 }
 
 .nav {
