@@ -4,7 +4,7 @@ const items = Array.from(containerInner.children);
 const previousButton = document.querySelector('.navigating__button--left');
 const nextButton = document.querySelector('.navigating__button--right')
 const navigationBar = document.querySelector('.nav');
-const navigaitonDots = Array.from(navigationbar.children);
+const navigaitonDots = Array.from(navigationBar.children);
 
 let pressed = false;
 let startx;
@@ -20,7 +20,6 @@ function handleContainerMousedown() {
 	pressed = true;
 	startx = event.screenX - containerInner.offsetLeft;
 	container.style.cursor = "grabbing";
-	console.log(event);
 }
 
 function handleContainerMouseenter() {
@@ -42,9 +41,17 @@ function handleContainerMousemove() {
 	x = event.screenX;
 
 	containerInner.style.left = `${x - startx}px`;
+
+	checkEndPoint();
 }
 
 function checkEndPoint() {
 	let outerContainer = container.getBoundingClientRect();
 	let innerContainer = containerInner.getBoundingClientRect();
+	
+	if (parseInt(containerInner.style.left) > 0) {
+		containerInner.style.left = '0px'
+	}else if (innerContainer.right < outerContainer.right){
+		containerInner.style.left = `-${innerContainer.width - outerContainer.width}px`;
+	}
 }
