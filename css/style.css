@@ -9,3 +9,25 @@ ul {
 figcaption {
 	display: none;
 }
+
+.nav {
+	width: 60%;
+	background-color: aqua;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: auto;
+}
+
+
+.nav__button {
+	width: 8.3%;
+	height: 1rem;
+	background-color: aqua;
+	border-radius: 2rem;
+	border: none;
+}
+
+.nav__button--active {
+	background-color: orange;
+}
