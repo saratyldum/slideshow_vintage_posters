@@ -1,6 +1,7 @@
 body {
 	overflow: hidden;
 }
+
 ul {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -20,7 +21,6 @@ img {
 	width: 100%;
 }
 
-
 figcaption {
 	padding: 1.5rem 0 0 0;
 	border-bottom: 1px solid black;
@@ -28,25 +28,24 @@ figcaption {
 
 .nav {
 	width: 60%;
-	background-color: aqua;
+	background: linear-gradient(90deg, #FFC733, #FF7E7C);	
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	margin: 2rem auto;
+	margin: 1rem auto;
 	border-radius: 2rem;
 }
-
 
 .nav__button {
 	width: 8.3%;
 	height: 1rem;
-	background-color: aqua;
+	background-color: transparent;
 	border-radius: 2rem;
 	border: none;
 }
 
 .nav__button--active {
-	background-color: orange;
+	background-color: #4B6464;
 }
 
 .slideshow__container {
@@ -61,7 +60,7 @@ figcaption {
 	justify-content: space-around;
 	position: absolute;
 	right: 50%;
-	bottom: 1rem;
+	bottom: 5%;
 	transform: translateX(50%)
 }
 
