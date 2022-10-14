@@ -11,10 +11,27 @@
 	</head>
 
 	<body>
+		<header>
+			<nav class="nav">
+				<button class="nav__button nav__button--active"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+				<button class="nav__button"></button>
+			</nav>
+		</header>
+		
 		<main>
 			<div class="slideshow__container">
 				<ul>
-					<li class="slideshow__item">
+					<li class="slideshow__item slideshow__item--active">
 						<figure>
 							<img src="./assets/1.jpg" alt="1">
 							<figcaption>Bildetekst</figcaption>
@@ -91,7 +108,10 @@
 				</ul>
 				</div>
 
-				<button class="slideshow__dot--active"></button>
+				<div class="navigating__buttons">
+					<button class="navigation__button navigation__button--left"></button>
+					<button class="navigation__button navigation__button--right"></button>
+				</div>
 		</main>
 		<script src="./js/script.js"></script>
 	</body>
