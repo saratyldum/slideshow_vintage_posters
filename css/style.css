@@ -1,8 +1,6 @@
-.slideshow__container {
-	width: 100vw;
+body {
 	overflow: hidden;
 }
-
 ul {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -10,11 +8,22 @@ ul {
 	gap: 6rem;
 	width: 375%;
 	align-items: baseline;
+	top: 10%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	transition: 0s ease-in;
 }
 
 img {
 	object-fit: cover;
 	width: 100%;
+}
+
+
+figcaption {
+	padding: 1.5rem 0 0 0;
+	border-bottom: 1px solid black;
 }
 
 .nav {
@@ -40,9 +49,9 @@ img {
 	background-color: orange;
 }
 
-figcaption {
-	padding: 1.5rem 0 0 0;
-	border-bottom: 1px solid black;
+.slideshow__container {
+	width: 100%;
+	overflow: hidden;
 }
 
 .navigating__buttons {
@@ -50,6 +59,10 @@ figcaption {
 	margin: 1rem auto;
 	display: flex;
 	justify-content: space-around;
+	position: absolute;
+	right: 50%;
+	bottom: 1rem;
+	transform: translateX(50%)
 }
 
 .navigating__button {
