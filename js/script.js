@@ -6,6 +6,9 @@ const nextButton = document.querySelector('.navigating__button--right')
 const navigationBar = document.querySelector('.nav');
 const navigaitonDots = Array.from(navigationBar.children);
 
+const itemSize = items[11].getBoundingClientRect().width; 
+
+
 let pressed = false;
 let startx;
 let x;
@@ -16,6 +19,7 @@ container.addEventListener('mouseup', handleContainerMouseup);
 window.addEventListener('mouseup', handleWindowmouseup);
 container.addEventListener('mousemove', handleContainerMousemove);
 
+// Grab and Drag functions
 function handleContainerMousedown() {
 	pressed = true;
 	startx = event.screenX - containerInner.offsetLeft;
@@ -55,3 +59,9 @@ function checkEndPoint() {
 		containerInner.style.left = `-${innerContainer.width - outerContainer.width}px`;
 	}
 }
+
+// Navigating buttons
+// Click left
+//Click right
+//move to nav buttons position
+//Move when clicking tastatur
