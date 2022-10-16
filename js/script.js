@@ -1,5 +1,5 @@
 const container = document.querySelector('.slideshow__container');
-const containerInner = document.querySelector('ul');
+const containerInner = document.querySelector('.slideshow__slider');
 const items = Array.from(containerInner.children);
 const previousButton = document.querySelector('.navigating__button--left');
 const nextButton = document.querySelector('.navigating__button--right')

@@ -10,8 +10,8 @@
 		<link rel="stylesheet" href="./css/style.css">
 	</head>
 
-	<body>
-		<header>
+	<body class="body">
+		<header class="header">
 			<nav class="nav">
 				<button class="nav__button nav__button--active"></button>
 				<button class="nav__button"></button>
@@ -28,29 +28,12 @@
 			</nav>
 		</header>
 		
-		<main>
+		<main class="main">
 			<div class="slideshow__container">
-				<ul>
+				<ul class="slideshow__slider">
 					<li class="slideshow__item slideshow__item--active">
 						<figure>
-							<img 
-								srcset=
-									"./assets/small/3.jpg 360w,
-									./assets/medium/3.jpg 600w,
-									./assets/large/3.jpg 1000w"
-								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px"
-								src="./assets/large/3.jpg" 
-								alt="1">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>
-					
-					<li class="slideshow__item">
-						<figure>
-							<img
+							<img class="image"
 								srcset=
 									"./assets/small/2.jpg 360w,
 									./assets/medium/2.jpg 600w,
@@ -61,13 +44,36 @@
 									1000px"
 								src="./assets/large/2.jpg" 
 								alt="2">
-							<figcaption>Bildetekst</figcaption>
+							<div class="figcaption__container">
+								<figcaption class="figcaption">listen to your inner child!</figcaption>
+								<p class="paragraph">by Tim Hufner</p>
+							</div>
+						</figure>
+					</li>
+					
+					<li class="slideshow__item">
+						<figure>
+							<img class="image"
+								srcset=
+									"./assets/small/3.jpg 360w,
+									./assets/medium/3.jpg 600w,
+									./assets/large/3.jpg 1000w"
+								sizes=
+									"(max-width: 360px) 360px,
+									(max-width: 600px) 600px,
+									1000px"
+								src="./assets/large/3.jpg" 
+								alt="">
+							<div class="figcaption__container">
+								<figcaption class="figcaption">braniff airways</figcaption>
+								<p class="paragraph">by Maximilian Bruck</p>
+							</div>
 						</figure>
 					</li>
 
 					<li class="slideshow__item">
 						<figure>
-							<img
+							<img class="image"
 								srcset=
 									"./assets/small/4.jpg 360w,
 									./assets/medium/4.jpg 600w,
@@ -78,173 +84,203 @@
 									1000px"
 								src="./assets/large/4.jpg" 
 								alt="3">
-							<figcaption>Bildetekst</figcaption>
+							<div class="figcaption__container">
+								<figcaption class="figcaption">scheveningen</figcaption>
+								<p class="paragraph">by Mike McGill</p>
+							</div>	
 						</figure>
 					</li>
-
+					
 					<li class="slideshow__item">
 						<figure>
-							<img
-								srcset=
-									"./assets/small/12.jpg 360w,
-									./assets/medium/12.jpg 600w,
-									./assets/large/12.jpg 1000w"
-								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px"
-								src="./assets/12.jpg" 
-								alt="4">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>
-
-					<li class="slideshow__item">
-						<figure>
-							<img 
-								srcset=
+							<img class="image"
+							srcset=
 									"./assets/small/5.jpg 360w,
 									./assets/medium/5.jpg 600w,
 									./assets/large/5.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px"
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px"
 								src="./assets/5.jpg" 
 								alt="5">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>	
-
-					<li class="slideshow__item">
-						<figure>
-							<img
+								<div class="figcaption__container">
+									<figcaption class="figcaption">join the navy</figcaption>
+									<p class="paragraph">by Vinnie Drake</p>
+								</div>
+							</figure>
+						</li>	
+						
+						<li class="slideshow__item">
+							<figure>
+								<img class="image"
 								srcset=
-									"./assets/small/6.jpg 360w,
-									./assets/medium/6.jpg 600w,
-									./assets/large/6.jpg 1000w"
+								"./assets/small/6.jpg 360w,
+								./assets/medium/6.jpg 600w,
+								./assets/large/6.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px" 
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px" 
 								src="./assets/6.jpg" 
 								alt="6">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>	
-
-					<li class="slideshow__item">
-						<figure>
-							<img
+								<div class="figcaption__container">
+									<figcaption class="figcaption">sailor</figcaption>
+									<p class="paragraph">by Greyson Fisher</p>
+								</div>
+							</figure>
+						</li>	
+						
+						<li class="slideshow__item">
+							<figure>
+								<img class="image"
 								srcset=
-									"./assets/small/7.jpg 360w,
-									./assets/medium/7.jpg 600w,
-									./assets/large/7.jpg 1000w"
+								"./assets/small/7.jpg 360w,
+								./assets/medium/7.jpg 600w,
+								./assets/large/7.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px"
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px"
 								src="./assets/7.jpg" 
 								alt="7">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>	
-
-					<li class="slideshow__item">
-						<figure>
-							<img
+								<div class="figcaption__container">
+									<figcaption class="figcaption">winter sports</figcaption>
+									<p class="paragraph">by Demi Booker</p>
+								</div>
+							</figure>
+						</li>	
+						
+						<li class="slideshow__item">
+							<figure>
+								<img class="image"
 								srcset=
-									"./assets/small/8.jpg 360w,
-									./assets/medium/8.jpg 600w,
-									./assets/large/8.jpg 1000w"
+								"./assets/small/8.jpg 360w,
+								./assets/medium/8.jpg 600w,
+								./assets/large/8.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px" 
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px" 
 								src="./assets/8.jpg" 
 								alt="8">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>					
-
-					<li class="slideshow__item">
-						<figure>
-							<img
+								<div class="figcaption__container">
+									<figcaption class="figcaption">puck</figcaption>
+									<p class="paragraph">by Jenny Preston</p>
+								</div>
+							</figure>
+						</li>					
+						
+						<li class="slideshow__item">
+							<figure>
+								<img class="image"
 								srcset=
-									"./assets/small/9.jpg 360w,
-									./assets/medium/9.jpg 600w,
-									./assets/large/9.jpg 1000w"
+								"./assets/small/9.jpg 360w,
+								./assets/medium/9.jpg 600w,
+								./assets/large/9.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px"
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px"
 								src="./assets/9.jpg" 
 								alt="9">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>	
-
-					<li class="slideshow__item">
-						<figure>
-							<img
+								<div class="figcaption__container">
+									<figcaption class="figcaption">more courtesy</figcaption>
+									<p class="paragraph">by Chace Hook</p>
+								</div>
+							</figure>
+						</li>	
+						
+						<li class="slideshow__item">
+							<figure>
+								<img class="image"
 								srcset=
-									"./assets/small/10.jpg 360w,
-									./assets/medium/10.jpg 600w,
-									./assets/large/10.jpg 1000w"
+								"./assets/small/10.jpg 360w,
+								./assets/medium/10.jpg 600w,
+								./assets/large/10.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px"
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px"
 								src="./assets/10.jpg" 
 								alt="10">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>
-
-					<li class="slideshow__item">
-						<figure>
-							<img
+								<div class="figcaption__container">
+									<figcaption class="figcaption">fire wrecks a forest</figcaption>
+									<p class="paragraph">by Ira Logan</p>
+								</div>
+							</figure>
+						</li>
+						
+						<li class="slideshow__item">
+							<figure>
+								<img class="image"
 								srcset=
-									"./assets/small/11.jpg 360w,
-									./assets/medium/11.jpg 600w,
-									./assets/large/11.jpg 1000w"
+								"./assets/small/11.jpg 360w,
+								./assets/medium/11.jpg 600w,
+								./assets/large/11.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px"
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px"
 								src="./assets/11.jpg" 
 								alt="11">
-							<figcaption>Bildetekst</figcaption>
-						</figure>
-					</li>	
+								<div class="figcaption__container">
+									<figcaption class="figcaption">let them grow</figcaption>
+									<p class="paragraph">by Jonah Fulton</p>
+								</div>
+							</figure>
+						</li>	
+						
+						<li class="slideshow__item">
+							<figure>
+								<img class="image"
+									srcset=
+										"./assets/small/12.jpg 360w,
+										./assets/medium/12.jpg 600w,
+										./assets/large/12.jpg 1000w"
+									sizes=
+										"(max-width: 360px) 360px,
+										(max-width: 600px) 600px,
+										1000px"
+									src="./assets/12.jpg" 
+									alt="4">
+								<div class="figcaption__container">
+									<figcaption class="figcaption">keep your teeth clean</figcaption>
+									<p class="paragraph">by Nicola Jensen</p>
+								</div>
+							</figure>
+						</li>
 
-					<li class="slideshow__item">
-						<figure>
-							<img
+						<li class="slideshow__item slideshow__item--wide">
+							<figure>
+								<img class="image"
 								srcset=
-									"./assets/small/1.jpg 360w,
-									./assets/medium/1.jpg 600w,
-									./assets/large/1.jpg 1000w"
+								"./assets/small/1.jpg 360w,
+								./assets/medium/1.jpg 600w,
+								./assets/large/1.jpg 1000w"
 								sizes=
-									"(max-width: 360px) 360px,
-									(max-width: 600px) 600px,
-									1000px" 
+								"(max-width: 360px) 360px,
+								(max-width: 600px) 600px,
+								1000px" 
 								src="./assets/1.jpg" 
 								alt="1">
-							<figcaption>Bildetekst</figcaption>
+							<div class="figcaption__container">
+								<figcaption class="figcaption">vermouth</figcaption>
+								<p class="paragraph">by Ellie Burks</p>
+							</div>
 						</figure>
 					</li>	
 				</ul>
-				</div>
-			</main>
+			</div>
+		</main>
 
-			<footer>
-				<div class="navigating__buttons">
-					<button class="navigating__button navigating__button--left"></button>
+		<footer class="footer">
+			<div class="navigating__buttons">
+				<button class="navigating__button navigating__button--left"></button>
 
-					<button class="navigating__button navigating__button--right"></button>
-				</div>
-			</footer>
+				<button class="navigating__button navigating__button--right"></button>
+			</div>
+		</footer>
 
 		<script src="./js/script.js"></script>
 	</body>
