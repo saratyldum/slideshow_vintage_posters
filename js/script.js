@@ -1,10 +1,10 @@
 const container = document.querySelector('.slideshow__container');
 const containerInner = document.querySelector('.slideshow__slider');
-const items = Array.from(containerInner.children);
+const items = [...containerInner.children];
 const previousButton = document.querySelector('.navigating__button--left');
 const nextButton = document.querySelector('.navigating__button--right')
 const navigationBar = document.querySelector('.nav');
-const navigaitonDots = Array.from(navigationBar.children);
+const navigaitonDots = [...navigationBar.children];
 
 const itemSize = items[11].getBoundingClientRect().width; 
 
