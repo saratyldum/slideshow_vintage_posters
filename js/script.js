@@ -6,59 +6,22 @@ const nextButton = document.querySelector('.navigating__button--right')
 const navigationBar = document.querySelector('.nav');
 const navigaitonDots = [...navigationBar.children];
 
-const itemSize = items[11].getBoundingClientRect().width; 
+const itemSize = items[0].getBoundingClientRect().width;
 
 
-let pressed = false;
-let startx;
-let x;
 
-container.addEventListener('mousedown', handleContainerMousedown);
-container.addEventListener('mouseenter', handleContainerMouseenter);
-container.addEventListener('mouseup', handleContainerMouseup);
-window.addEventListener('mouseup', handleWindowmouseup);
-container.addEventListener('mousemove', handleContainerMousemove);
+nextButton.addEventListener('click', handleNextButtonOnclick);
+previousButton.addEventListener('click', handlePreviousButtonOnclick);
 
-// Grab and Drag functions
-function handleContainerMousedown() {
-	pressed = true;
-	startx = event.screenX - containerInner.offsetLeft;
-	container.style.cursor = "grabbing";
-}
+function handleNextButtonOnclick() {
+	container.scrollLeft += 416;
+};
 
-function handleContainerMouseenter() {
-	container.style.cursor = "grab";
-}
 
-function handleContainerMouseup() {
-	container.style.cursor = "grab";
-}
+function handlePreviousButtonOnclick() {
+	container.scrollLeft -= 416;
+};
 
-function handleWindowmouseup() {
-	pressed = false;
-}
-
-function handleContainerMousemove() {
-	if(!pressed) return;
-	event.preventDefault();
-
-	x = event.screenX;
-
-	containerInner.style.left = `${x - startx}px`;
-
-	checkEndPoint();
-}
-
-function checkEndPoint() {
-	let outerContainer = container.getBoundingClientRect();
-	let innerContainer = containerInner.getBoundingClientRect();
-	
-	if (parseInt(containerInner.style.left) > 0) {
-		containerInner.style.left = '0px'
-	}else if (innerContainer.right < outerContainer.right){
-		containerInner.style.left = `-${innerContainer.width - outerContainer.width}px`;
-	}
-}
 
 // Navigating buttons
 // Click left
