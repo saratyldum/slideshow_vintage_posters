@@ -1,10 +1,14 @@
 .body {
 	width: 100vw;
 	height: 100vh;
+	margin: auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	overflow: hidden;
+}
+
+.main {
 	background: url(../assets/VINTAGE.svg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -35,7 +39,7 @@
 	height: 80vh;
 	overflow: scroll;
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 }
 
 .slideshow__container::-webkit-scrollbar {
@@ -96,6 +100,11 @@
 	border: 2px solid #566D6C;
 	background-color: transparent;
 	margin: .3rem;
+	cursor: pointer;
+}
+
+.navigating__button:hover {
+	background-color: #4b64644b;
 }
 
 .navigating__button--left {
@@ -121,6 +130,16 @@
 	
 	.body {
 		justify-content: flex-start;
+		margin-bottom: 1rem;
+	}
+
+	.main {
+		background: none;
+	}
+
+	.slideshow__container {
+		height: 100vh;
+		align-items: flex-start;
 	}
 	
 	.slideshow__slider {
