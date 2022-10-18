@@ -27,20 +27,35 @@ function moveToSlide (slideshowCarousel, currentSlide, targetSlide) {
 	// if
 }
 
+//OPPDATERER DOTS
+function updateDots (currentDot, targetDot) {
+	currentDot.classList.remove('nav__button--active');
+	targetDot.classList.add('nav__button--active');
+}
+
 //høyreknapp
 nextButton.addEventListener('click', event => {
 	const currentSlide = slideshowCarousel.querySelector('.slideshow__item--active');
 	const nextSlide = currentSlide.nextElementSibling;
+	const currentDot = navigationBar.querySelector('.nav__button--active');
+	const nextDot = currentDot.nextElementSibling;
+
 
 	moveToSlide(slideshowCarousel, currentSlide, nextSlide);
+	updateDots (currentDot, nextDot);
 });
+
 
 //venstreknapp
 previousButton.addEventListener('click', event => {
 	const currentSlide = slideshowCarousel.querySelector('.slideshow__item--active');
 	const previousSlide = currentSlide.previousElementSibling;
+	const currentDot = navigationBar.querySelector('.nav__button--active');
+	const previousDot = currentDot.previousElementSibling;
+
 
 	moveToSlide(slideshowCarousel, currentSlide, previousSlide);
+	updateDots (currentDot, previousDot);
 });
 
 
@@ -49,19 +64,26 @@ navigationBar.addEventListener('click', event => {
 	//hvilken dot ble trykket
 	const targetDot = event.target;
 	
-	if (!targetDot) return;
-
 	const currentSlide = slideshowCarousel.querySelector('.slideshow__item--active');
 	const currentDot = navigationBar.querySelector('.nav__button--active');
 	const targetIndex = navigationDots.findIndex(dot => dot === targetDot);
 	const targetSlide = slideshowItems[targetIndex]
 
 	moveToSlide(slideshowCarousel, currentSlide, targetSlide);
+	updateDots (currentDot, targetDot);
 
-	currentDot.classList.remove('nav__button--active');
-	targetDot.classList.add('nav__button--active');
+	// if (targetIndex === 0) {
+	// 	previousButton.classList.add('is-hidden');
+	// 	nextButton.classList.remove('is-hidden');
+	// }else if (targetIndex === slideshowItems.length - 1) {
+	// 	previousButton.classList.remove('is-hidden');
+	// 	nextButton.classList.add('is-hidden');
+	// }else {
+	// 	previousButton.classList.remove('is-hidden');
+	// 	nextButton.classList.remove('is-hidden');
+	// }
 
-})
+});
 
 
 //SKRIV OM SÅ EVENTLISTENER PÅ TOPP OGSÅ FUNKSJONER
