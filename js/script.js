@@ -14,17 +14,19 @@ const itemSize = slideshowItems[0].getBoundingClientRect().width;
 inspirasjon Kevin Powell:
  */
 
+
+
+nextButton.addEventListener('click', handleNextButtonClick);
+previousButton.addEventListener('click', handlePreviousButtonClick);
+navigationBar.addEventListener('click', handleNavigationBarClick);
+
+
 //setter bildene på rad og rekke
 function setSlidePosition(item, index) {
 	item.style.left = itemSize * index + 'px'
 };
 
 slideshowItems.forEach(setSlidePosition);
-
-
-nextButton.addEventListener('click', handleNextButtonClick);
-previousButton.addEventListener('click', handlePreviousButtonClick);
-navigationBar.addEventListener('click', handleNavigationBarClick);
 
 //handles next button
 function handleNextButtonClick() {
