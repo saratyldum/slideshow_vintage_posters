@@ -51,7 +51,7 @@
 	gap: 12rem;
 	align-items: baseline;
 	padding: 0 calc(50% - 240px) 0 calc(50% - 160px);
-	transition: tranform 250ms ease-in;
+	transition: transform 250ms ease-in;
 }
 
 .slideshow__item {
