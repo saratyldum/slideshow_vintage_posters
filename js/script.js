@@ -36,7 +36,7 @@ function handleNextButtonClick() {
 	const nextDot = currentDot.nextElementSibling;
 	const nextIndex = slideshowItems.findIndex(slideshowItems => slideshowItems === nextSlide);
 
-	moveToSlide(slideshowCarousel, currentSlide, nextSlide);
+	moveToSlideNext(slideshowCarousel, currentSlide, nextSlide);
 	updateDots (currentDot, nextDot);
 	hideShowButtons (slideshowItems, previousButton, nextButton, nextIndex);
 }
@@ -50,7 +50,7 @@ function handlePreviousButtonClick() {
 	const previousDot = currentDot.previousElementSibling;
 	const previousIndex = slideshowItems.findIndex(slideshowItems => slideshowItems === previousSlide);
 
-	moveToSlide(slideshowCarousel, currentSlide, previousSlide);
+	moveToSlidePrevious(slideshowCarousel, currentSlide, previousSlide);
 	updateDots (currentDot, previousDot);
 	hideShowButtons (slideshowItems, previousButton, nextButton, previousIndex);
 
@@ -74,23 +74,37 @@ const hideShowButtons = (slideshowItems, previousButton, nextButton, targetIndex
 function handleNavigationBarClick() {
 	const targetDot = event.target;
 	
-	const currentSlide = slideshowCarousel.querySelector('.slideshow__item--active');
+	let currentSlide = slideshowCarousel.querySelector('.slideshow__item--active');
 	const currentDot = navigationBar.querySelector('.nav__button--active');
 	const targetIndex = navigationDots.findIndex(dot => dot === targetDot);
-	const targetSlide = slideshowItems[targetIndex]
+	const targetSlide = slideshowItems[targetIndex];
 
-	moveToSlide(slideshowCarousel, currentSlide, targetSlide);
+	// moveToSlide(slideshowCarousel, currentSlide, targetSlide);
+	moveToSlideNavigationBar(slideshowCarousel, currentSlide, targetSlide);
 	updateDots (currentDot, targetDot);
 	hideShowButtons (slideshowItems, previousButton, nextButton, targetIndex);
 }
 
-//moves the slideshow
-function moveToSlide (slideshowCarousel, currentSlide, targetSlide) {
-	slideshowCarousel.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+function moveToSlideNavigationBar(slideshowCarousel, currentSlide, targetSlide) {
+	slideshowCarousel.style.transform += 'translateX(512px)';
 	currentSlide.classList.remove('slideshow__item--active');
 	targetSlide.classList.add('slideshow__item--active');
 
-	//if mellom to slides, event.target.closest('item')
+}
+
+//moves the slideshow
+function moveToSlideNext (slideshowCarousel, currentSlide, targetSlide) {
+	slideshowCarousel.style.transform += 'translateX(-512px)';
+	currentSlide.classList.remove('slideshow__item--active');
+	targetSlide.classList.add('slideshow__item--active');
+
+}
+
+function moveToSlidePrevious (slideshowCarousel, currentSlide, targetSlide) {
+	slideshowCarousel.style.transform += 'translateX(512px)';
+	currentSlide.classList.remove('slideshow__item--active');
+	targetSlide.classList.add('slideshow__item--active');
+
 }
 
 //updates navigation bar dots
@@ -98,6 +112,8 @@ function updateDots (currentDot, targetDot) {
 	currentDot.classList.remove('nav__button--active');
 	targetDot.classList.add('nav__button--active');
 }
+
+
 
 
 
