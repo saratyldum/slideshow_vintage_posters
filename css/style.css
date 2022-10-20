@@ -27,6 +27,7 @@
 	background-color: transparent;
 	border-radius: 2rem;
 	border: none;
+	transition: 0.7s ease-out;
 }
 
 .nav__button--active {
@@ -51,7 +52,7 @@
 	gap: 12rem;
 	align-items: baseline;
 	padding: 0 calc(50% - 240px) 0 calc(50% - 160px);
-	transition: transform 250ms ease-in;
+	transition: 0.7s ease-in-out;
 }
 
 .slideshow__item {
