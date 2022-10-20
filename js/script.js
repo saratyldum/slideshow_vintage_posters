@@ -34,9 +34,11 @@ function handleNextButtonClick() {
 	const nextSlide = currentSlide.nextElementSibling;
 	const currentDot = navigationBar.querySelector('.nav__button--active');
 	const nextDot = currentDot.nextElementSibling;
+	const nextIndex = slideshowItems.findIndex(slideshowItems => slideshowItems === nextSlide);
 
 	moveToSlide(slideshowCarousel, currentSlide, nextSlide);
 	updateDots (currentDot, nextDot);
+	hideShowButtons (slideshowItems, previousButton, nextButton, nextIndex);
 }
 
 
@@ -46,9 +48,26 @@ function handlePreviousButtonClick() {
 	const previousSlide = currentSlide.previousElementSibling;
 	const currentDot = navigationBar.querySelector('.nav__button--active');
 	const previousDot = currentDot.previousElementSibling;
+	const previousIndex = slideshowItems.findIndex(slideshowItems => slideshowItems === previousSlide);
 
 	moveToSlide(slideshowCarousel, currentSlide, previousSlide);
 	updateDots (currentDot, previousDot);
+	hideShowButtons (slideshowItems, previousButton, nextButton, previousIndex);
+
+}
+
+//hides next/previous button at the beginning or end of slideshow
+const hideShowButtons = (slideshowItems, previousButton, nextButton, targetIndex) => {
+	if (targetIndex === 0) {
+		previousButton.classList.add('is-hidden');
+		nextButton.classList.remove('is-hidden');
+	} else if (targetIndex === slideshowItems.length - 1) {
+		previousButton.classList.remove('is-hidden');
+		nextButton.classList.add('is-hidden');
+	} else {
+		previousButton.classList.remove('is-hidden');
+		nextButton.classList.remove('is-hidden');
+	}
 }
 
 //handles navigation bar
@@ -62,6 +81,7 @@ function handleNavigationBarClick() {
 
 	moveToSlide(slideshowCarousel, currentSlide, targetSlide);
 	updateDots (currentDot, targetDot);
+	hideShowButtons (slideshowItems, previousButton, nextButton, targetIndex);
 }
 
 //moves the slideshow
@@ -73,11 +93,13 @@ function moveToSlide (slideshowCarousel, currentSlide, targetSlide) {
 	//if mellom to slides, event.target.closest('item')
 }
 
-//updates navigaiton bar dots
+//updates navigation bar dots
 function updateDots (currentDot, targetDot) {
 	currentDot.classList.remove('nav__button--active');
 	targetDot.classList.add('nav__button--active');
 }
+
+
 
 
 
