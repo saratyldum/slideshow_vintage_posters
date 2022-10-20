@@ -72,22 +72,17 @@ function handleNavigationBarClick() {
 	const targetIndex = navigationDots.findIndex(dot => dot === targetDot);
 	const targetSlide = slideshowItems[targetIndex];
 
-	moveToSlideNavigationBar(slideshowCarousel, currentSlide, targetSlide);
+	targetSlide.scrollIntoView({
+		behavior: 'smooth',
+		inline: 'center'});
+
+	currentSlide.classList.remove('slideshow__item--active');
+	targetSlide.classList.add('slideshow__item--active');
+
 	updateDots (currentDot, targetDot);
 	hideShowButtons (slideshowItems, previousButton, nextButton, targetIndex);
 }
 
-
-
-function moveToSlideNavigationBar(slideshowCarousel, currentSlide, targetSlide) {
-
-	container.scrollLeft += 512;
-
-	// slideshowCarousel.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-	currentSlide.classList.remove('slideshow__item--active');
-	targetSlide.classList.add('slideshow__item--active');
-
-}
 
 //moves the slideshow
 function moveToSlideNext (slideshowCarousel, currentSlide, targetSlide) {
