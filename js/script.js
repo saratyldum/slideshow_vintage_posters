@@ -3,17 +3,13 @@
 const container = document.querySelector('.slideshow__container');
 const slideshowCarousel = document.querySelector('.slideshow__slider');
 const slideshowItems = [...slideshowCarousel.children];
+const slideshowItemActive = document.querySelector('.slideshow__item--active');
 const previousButton = document.querySelector('.navigating__button--left');
 const nextButton = document.querySelector('.navigating__button--right')
 const navigationBar = document.querySelector('.nav');
 const navigationDots = [...navigationBar.children];
 
 const itemSize = slideshowItems[0].getBoundingClientRect().width;
-
-/*
-inspirasjon Kevin Powell:
- */
-
 
 
 nextButton.addEventListener('click', handleNextButtonClick);
@@ -22,13 +18,6 @@ navigationBar.addEventListener('click', handleNavigationBarClick);
 window.addEventListener('keydown', handleNavigationButtonsKeyPress);
 
 
-
-//setter bildene på rad og rekke
-function setSlidePosition(item, index) {
-	item.style.left = itemSize * index + 'px'
-};
-
-slideshowItems.forEach(setSlidePosition);
 
 //handles next button
 function handleNextButtonClick() {
@@ -75,20 +64,26 @@ const hideShowButtons = (slideshowItems, previousButton, nextButton, targetIndex
 //handles navigation bar
 function handleNavigationBarClick() {
 	const targetDot = event.target;
+
+	console.log(targetDot);
 	
 	let currentSlide = slideshowCarousel.querySelector('.slideshow__item--active');
 	const currentDot = navigationBar.querySelector('.nav__button--active');
 	const targetIndex = navigationDots.findIndex(dot => dot === targetDot);
 	const targetSlide = slideshowItems[targetIndex];
 
-	// moveToSlide(slideshowCarousel, currentSlide, targetSlide);
 	moveToSlideNavigationBar(slideshowCarousel, currentSlide, targetSlide);
 	updateDots (currentDot, targetDot);
 	hideShowButtons (slideshowItems, previousButton, nextButton, targetIndex);
 }
 
+
+
 function moveToSlideNavigationBar(slideshowCarousel, currentSlide, targetSlide) {
-	slideshowCarousel.style.transform += 'translateX(512px)';
+
+	container.scrollLeft += 512;
+
+	// slideshowCarousel.style.transform = 'translateX(-' + targetSlide.style.left + ')';
 	currentSlide.classList.remove('slideshow__item--active');
 	targetSlide.classList.add('slideshow__item--active');
 
@@ -123,32 +118,3 @@ function handleNavigationButtonsKeyPress() {
 		handlePreviousButtonClick();
 	}
 }
-
-
-
-//flytt til dot slide
-// navigationBar.addEventListener('click', event => {
-// 	//hvilken dot ble trykket
-// 	const targetDot = event.target;
-	
-// 	const currentSlide = slideshowCarousel.querySelector('.slideshow__item--active');
-// 	const currentDot = navigationBar.querySelector('.nav__button--active');
-// 	const targetIndex = navigationDots.findIndex(dot => dot === targetDot);
-// 	const targetSlide = slideshowItems[targetIndex]
-
-// 	moveToSlide(slideshowCarousel, currentSlide, targetSlide);
-// 	updateDots (currentDot, targetDot);
-
-	// if (targetIndex === 0) {
-	// 	previousButton.classList.add('is-hidden');
-	// 	nextButton.classList.remove('is-hidden');
-	// }else if (targetIndex === slideshowItems.length - 1) {
-	// 	previousButton.classList.remove('is-hidden');
-	// 	nextButton.classList.add('is-hidden');
-	// }else {
-	// 	previousButton.classList.remove('is-hidden');
-	// 	nextButton.classList.remove('is-hidden');
-	// }
-
-// });
-
