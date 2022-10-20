@@ -19,6 +19,8 @@ inspirasjon Kevin Powell:
 nextButton.addEventListener('click', handleNextButtonClick);
 previousButton.addEventListener('click', handlePreviousButtonClick);
 navigationBar.addEventListener('click', handleNavigationBarClick);
+window.addEventListener('keydown', handleNavigationButtonsKeyPress);
+
 
 
 //setter bildene på rad og rekke
@@ -114,8 +116,13 @@ function updateDots (currentDot, targetDot) {
 }
 
 
-
-
+function handleNavigationButtonsKeyPress() {
+	if (event.key === 'ArrowRight') {
+		handleNextButtonClick();
+	} else if (event.key === 'ArrowLeft') {
+		handlePreviousButtonClick();
+	}
+}
 
 
 
